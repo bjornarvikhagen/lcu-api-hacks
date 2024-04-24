@@ -102,11 +102,17 @@ async def lock_champion(connection, actionId):
         print(f"An error occurred while locking the champion: {str(e)}")
 
 #todo:
-# retrieve game version: GET https://127.0.0.1/lol-patch/v1/game-version
+
 
 # Quit your current gameflow
+  # note: https://127.0.0.1/lol-login/v1/session/invoke?destination=gameService&method=quitGame json body {"args": "[]"}
+
+
 # Get these values through LCU requests:
-# Game version
+
+# ✅ Game version
+    # retrieve game version: GET https://127.0.0.1/lol-patch/v1/game-version
+
 # RSO Inventory JWT
 # RSO Id token
 # RSO Access token
@@ -117,6 +123,7 @@ async def lock_champion(connection, actionId):
 # Wait some time (12-15 seconds is enough I guess)
 # Again, quit your current gameflow
 # Send setClientReceivedGameMessage LCDS request to gameService destination
+
 @connector.ready
 async def connect(connection):
     championId = 1
